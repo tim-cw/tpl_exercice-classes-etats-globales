@@ -1,0 +1,83 @@
+/* ==========================================================================
+   header / component
+   ========================================================================== */
+
+.header {
+    --header-height: 100px;
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+    left: 0;
+    height: var(--header-height);
+    position: sticky;
+    transform: translateY(0);
+    transition: all 0.4s ease-out;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    &:before {
+        background-color: var(--color-bg-secondary);
+        width: 100%;
+        height: 100%;
+        display: block;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+}
+
+.header__brand {
+    width: 200px;
+    position: relative;
+    z-index: 10;
+}
+
+.nav-primary {
+    display: flex;
+    z-index: 2;
+
+    ul {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+
+        transition: all 0.6s $ease-out-expo;
+
+        a {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+    }
+}
+
+.nav-primary--item {
+    --color-button: tomato;
+    width: 20px;
+    border-radius: 5px;
+    aspect-ratio: 1/1;
+    background: var(--color-button);
+    border: 2px white solid;
+    cursor: pointer;
+    transform: scale(1);
+    transition: all 0.4s $ease-out-quad;
+    &:hover {
+        transform: scale(1.1);
+        border-color: var(--color-button);
+    }
+
+    &[data-color='teal'] {
+        --color-button: teal;
+    }
+    &[data-color='lightpink'] {
+        --color-button: lightpink;
+    }
+}
