@@ -35,15 +35,20 @@
     width: 200px;
     position: relative;
     z-index: 10;
+
+    img {
+        display: block;
+    }
 }
 
 .nav-primary {
-    display: flex;
     z-index: 2;
 
     ul {
         width: 100%;
         display: flex;
+        align-items: center;
+        margin: 0;
         gap: 15px;
         justify-content: center;
         list-style: none;
@@ -61,7 +66,7 @@
 
 .nav-primary--item {
     --color-button: tomato;
-    width: 20px;
+    width: 30px;
     border-radius: 5px;
     aspect-ratio: 1/1;
     background: var(--color-button);
